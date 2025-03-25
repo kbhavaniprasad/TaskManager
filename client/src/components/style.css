@@ -1,0 +1,212 @@
+/* General container styling */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+  }
+  
+  /* Heading styling */
+  h1 {
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add task section */
+  .add-task {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    align-items: center;
+  }
+  
+  /* Input group for floating label effect */
+  .input-group {
+    position: relative;
+    flex: 1;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 25px;
+    color: #2c3e50;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input:focus,
+  .input-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+  }
+  
+  .input-group input:focus + label,
+  .input-group input:focus + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #3498db;
+    background: #ffffff;
+    padding: 0 5px;
+    border-radius: 5px;
+  }
+  
+  /* Task list styling */
+  .task-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .task:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task span {
+    font-family: "Arial", sans-serif;
+    font-size: 1.1em;
+    color: #2d3436;
+  }
+  
+  .task span.completed {
+    text-decoration: line-through;
+    color: #b2bec3;
+    font-style: italic;
+  }
+  
+  /* Task buttons container */
+  .task-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* General button styling */
+  button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Add button */
+  .add {
+    background: linear-gradient(90deg, #28a745 0%, #2ecc71 100%);
+    color: white;
+    margin-left:20px;
+  }
+  
+  .add:hover {
+    background: linear-gradient(90deg, #2ecc71 0%, #28a745 100%);
+  }
+  
+  /* Edit button */
+  .edit {
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+    color: white;
+  }
+  
+  .edit:hover {
+    background: linear-gradient(90deg, #2980b9 0%, #3498db 100%);
+  }
+  
+  /* Save button */
+  .save {
+    background: linear-gradient(90deg, #17a2b8 0%, #00cec9 100%);
+    color: white;
+  }
+  
+  .save:hover {
+    background: linear-gradient(90deg, #00cec9 0%, #17a2b8 100%);
+  }
+  
+  /* Complete button */
+  .complete {
+    background: linear-gradient(90deg, #f1c40f 0%, #f39c12 100%);
+    color: #2d3436;
+  }
+  
+  .complete:hover {
+    background: linear-gradient(90deg, #f39c12 0%, #f1c40f 100%);
+  }
+  
+  /* Delete button */
+  .delete {
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+  }
+  
+  .delete:hover {
+    background: linear-gradient(90deg, #c0392b 0%, #e74c3c 100%);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .add-task {
+      flex-direction: column;
+    }
+  
+    .task {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  
+    .task-buttons {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
