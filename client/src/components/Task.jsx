@@ -16,7 +16,7 @@ function Task() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("https://taskmanager-1-h3tn.onrender.com/tasks");
+      const res = await axios.get("http://localhost:5000/tasks");
       setTasks(res.data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
