@@ -9,6 +9,7 @@ function Task() {
   const [editId, setEditId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
+  const API_URI="https://taskmanager-fw0l.onrender.com";
 
   useEffect(() => {
     fetchTasks();
@@ -16,7 +17,7 @@ function Task() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/tasks");
+      const res = await axios.get(`${API_URI}/tasks`);
       setTasks(res.data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -26,7 +27,7 @@ function Task() {
   const addTask = async () => {
     if (!title) return;
     try {
-      await axios.post("http://localhost:5000/tasks", { title, description });
+      await axios.post(`${API_URI}/tasks`, { title, description });
       setTitle("");
       setDescription("");
       fetchTasks();
@@ -43,7 +44,7 @@ function Task() {
 
   const saveEdit = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${id}`, {
+      await axios.put(`${API_URI}/tasks/${id}`, {
         title: editTitle,
         description: editDescription,
       });
@@ -56,7 +57,7 @@ function Task() {
 
   const updateTask = async (id, completed) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${id}`, {
+      await axios.put(`${API_URI}/tasks/${id}`, {
         completed: !completed,
       });
       fetchTasks();
@@ -67,7 +68,7 @@ function Task() {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/tasks/${id}`);
+      await axios.delete(`${API_URI}/tasks/${id}`);
       fetchTasks();
     } catch (error) {
       console.error("Error deleting task:", error);
